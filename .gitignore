@@ -4,6 +4,9 @@
 # Cursor
 .cursor/
 
+# Snakemake
+.snakemake/
+
 # Memory Bank
 memory-bank/
 

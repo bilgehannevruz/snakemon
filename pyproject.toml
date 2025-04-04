@@ -10,6 +10,7 @@ dev = [
     "sphinxawesome-theme>=5.3.2",
 ]
 prod = [
+    "uvicorn>=0.34.0",
     "fastapi[standard]>=0.115.12",
     "psycopg2-binary>=2.9.10",
     "pydantic>=2.11.2",

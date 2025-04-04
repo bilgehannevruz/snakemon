@@ -3,24 +3,30 @@
 from sqlalchemy import Column, Integer, String, DateTime, Text, ForeignKey
 from sqlalchemy.orm import relationship
 from datetime import datetime
-
+from typing import Optional, List
+from sqlalchemy.sql import func
+from sqlalchemy.orm import Mapped
 from .database import Base
 
 class Workflow(Base):
-    __tablename__ = "workflows"
+    __tablename__ = "workflow"
 
-    id = Column(String, primary_key=True, index=True)
-    status = Column(String, index=True)
-    start_time = Column(DateTime, default=datetime.utcnow)
-    end_time = Column(DateTime, nullable=True)
+    id: Mapped[str] = Column(String, primary_key=True, index=True)
+    name: Mapped[Optional[str]] = Column(String, nullable=True)
+    status: Mapped[str] = Column(String, default="running")
+    start_time: Mapped[datetime] = Column(DateTime(timezone=True), server_default=func.now())
+    end_time: Mapped[Optional[datetime]] = Column(DateTime(timezone=True), nullable=True)
+    workdir: Mapped[Optional[str]] = Column(String, nullable=True)
+    snakefile_path: Mapped[Optional[str]] = Column(String, nullable=True)
+    arguments_json: Mapped[Optional[str]] = Column(Text, nullable=True) # Use Text for potentially long JSON
 
-    logs = relationship("WorkflowLog", back_populates="workflow")
+    logs: Mapped[List["WorkflowLog"]] = relationship("WorkflowLog", back_populates="workflow", cascade="all, delete-orphan")
 
 class WorkflowLog(Base):
     __tablename__ = "workflow_logs"
 
     id = Column(Integer, primary_key=True, index=True)
-    workflow_id = Column(String, ForeignKey("workflows.id"))
+    workflow_id = Column(String, ForeignKey("workflow.id"))
     timestamp = Column(DateTime)
     message_repr = Column(Text)
 

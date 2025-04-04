@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden border border-gray-200;
+  }
+
+  .card-header {
+    @apply bg-gradient-to-r from-indigo-50 to-purple-50 p-4 border-b border-indigo-100;
+  }
+
+  .card-body {
+    @apply p-6;
+  }
+}

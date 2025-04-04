@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      # Define environment variables for the backend
+      # If using sqlite, map the db file as a volume
+      DATABASE_URL: sqlite:///./snakemon.db
+      # Add other necessary env vars for backend here
+      # Mount the sqlite db file for persistence
+      # Adjust the source path if your db file is elsewhere
+    # Add network configuration if needed
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80" # Map host 5173 to container 80 (Nginx)
+    environment:
+      # Pass the backend API URL *accessible from the host browser*
+      VITE_API_BASE_URL: http://localhost:8000 # Use localhost for browser access
+    depends_on:
+      - backend # Ensures backend starts before frontend (optional but good practice)
+    # Add network configuration if needed
+
+# Define networks if you need specific network configurations
+# networks:
+#   app-network:
+#     driver: bridge
+
+# Define volumes if you need named volumes beyond simple mounts
+# volumes:
+#   db_data: 
