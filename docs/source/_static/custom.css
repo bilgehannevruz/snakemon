@@ -1,0 +1,29 @@
+/* Custom styles for Snakemon documentation */
+
+/* Set link colors to #049476 */
+a {
+    color: #049476;
+}
+
+a:hover {
+    color: #037c62; /* Slightly darker shade for hover */
+}
+
+a:visited {
+    color: #049476; /* Keep visited links the same color */
+}
+
+/* Style sidebar links as well */
+.sidebar a {
+    color: #049476;
+}
+
+/* Style header links if needed */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: #049476;
+}
+
+/* Style for inline code links */
+code.xref {
+    color: #049476;
+} 

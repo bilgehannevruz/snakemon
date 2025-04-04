@@ -44,6 +44,11 @@ html_theme_options = {
 html_permalinks_icon = Icons.permalinks_icon
 html_static_path = ['_static']
 
+# Add custom CSS file
+html_css_files = [
+    'custom.css',
+]
+
 # Example theme options (see theme docs for more)
 # html_theme_options = {
 #     'collapse_navigation': False,
