@@ -7,7 +7,7 @@ requires-python = ">=3.12"
 [dependency-groups]
 dev = [
     "sphinx>=7.0",
-    "sphinx-rtd-theme>=3.0.2",
+    "sphinxawesome-theme>=5.3.2",
 ]
 prod = [
     "fastapi[standard]>=0.115.12",

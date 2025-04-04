@@ -15,8 +15,10 @@ version = '0.1.0' # The full version, including alpha/beta/rc tags
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
+from sphinxawesome_theme.html_translator import Icons
+
 extensions = [
-    'sphinx_rtd_theme', # Add the theme
+    'sphinxawesome_theme', # Add the theme
     # Add other extensions here, e.g.:
     # 'sphinx.ext.autodoc',
     # 'sphinx.ext.napoleon',
@@ -33,7 +35,8 @@ root_doc = 'index'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinxawesome_theme'
+html_permalinks_icon = Icons.permalinks_icon
 html_static_path = ['_static']
 
 # Example theme options (see theme docs for more)
