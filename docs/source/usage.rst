@@ -68,7 +68,7 @@ Use ``uv`` to run the Uvicorn server:
 The service will start, and on the first run, it will create the database file (``snakemon.db`` by default) and the necessary tables.
 
 Docker Deployment
-****************
+*****************
 
 Snakemon can also be run using Docker containers, which simplifies deployment and ensures consistent execution environments.
 

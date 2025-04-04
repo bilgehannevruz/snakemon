@@ -5,7 +5,7 @@ FAQ
 Frequently Asked Questions about Snakemon.
 
 General Questions
-****************
+*****************
 
 **What is Snakemon?**
 
@@ -25,7 +25,7 @@ Snakemon helps you track and monitor Snakemake workflow executions by:
 Snakemon is designed for Snakemake versions that use the legacy ``--wms-monitor`` parameter, typically versions prior to v9.x. It is not compatible with newer versions that use the Monitor Schema protocol.
 
 Technical Questions
-******************
+*******************
 
 **How does Snakemon detect workflow success or failure?**
 
@@ -50,7 +50,7 @@ Set the ``DATABASE_URL`` environment variable to your PostgreSQL connection stri
 In a Docker environment, update the environment section in your docker-compose.yml.
 
 Docker Questions
-***************
+****************
 
 **How do I persist data when using Docker?**
 
@@ -96,7 +96,7 @@ To update your Snakemon instance:
     docker-compose up -d
 
 Troubleshooting
-**************
+***************
 
 **Why isn't my workflow status updating?**
 
@@ -122,4 +122,4 @@ Check the container logs:
 
 For SQLite, ensure your database file is writable and the container has proper permissions to the data directory.
 
-For PostgreSQL, verify connection parameters and that the PostgreSQL service is running and accessible. 
+For PostgreSQL, verify connection parameters and that the PostgreSQL service is running and accessible

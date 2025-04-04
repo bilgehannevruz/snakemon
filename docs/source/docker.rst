@@ -5,7 +5,7 @@ Docker Deployment
 This section provides detailed information about deploying Snakemon using Docker containers.
 
 Quick Start
-**********
+***********
 
 The simplest way to get Snakemon running with Docker:
 
@@ -22,7 +22,7 @@ The simplest way to get Snakemon running with Docker:
     # Open http://localhost:5173 in your browser
 
 Container Architecture
-*********************
+**********************
 
 Snakemon uses a multi-container setup:
 
@@ -38,10 +38,10 @@ Snakemon uses a multi-container setup:
    * Communicates with the backend API
 
 Container Configuration
-**********************
+***********************
 
 Database Configuration
-=====================
+======================
 
 The backend container supports two database options:
 
@@ -77,7 +77,7 @@ The backend container supports two database options:
            - postgres_data:/var/lib/postgresql/data
 
 Custom Network Configuration
-===========================
+============================
 
 For more complex setups, you can customize the network configuration:
 
@@ -97,7 +97,7 @@ For more complex setups, you can customize the network configuration:
           - snakemon-network
 
 Production Deployment
-********************
+*********************
 
 For production deployments, consider these additional steps:
 
@@ -125,7 +125,7 @@ Example production docker-compose section:
             memory: 1G
 
 Troubleshooting
-**************
+***************
 
 1. **Database Connection Issues:**
    

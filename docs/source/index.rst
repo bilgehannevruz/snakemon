@@ -24,7 +24,7 @@ Features
 *   **Docker Support:** Deploy easily using Docker containers for both backend API and frontend UI.
 
 Architecture
-***********
+************
 
 Snakemon consists of two main components:
 
