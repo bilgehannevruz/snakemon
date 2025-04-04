@@ -38,7 +38,7 @@ Snakemon uses a ``.env`` file in the project root directory for configuration. C
 
 **.env Example:**
 
-.. code-block:: env
+.. code-block:: bash
 
     # Database URL (SQLAlchemy format)
     # Default is SQLite in the project directory

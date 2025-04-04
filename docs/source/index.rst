@@ -1,6 +1,6 @@
-###########################
+############################
 Snakemon - Snakemake Monitor
-###########################
+############################
 
 Snakemon is a lightweight web service designed to monitor the execution of Snakemake workflows, specifically targeting versions using the **legacy WMS monitoring protocol (generally prior to v9.x)**.
 
