@@ -67,6 +67,90 @@ Use ``uv`` to run the Uvicorn server:
 
 The service will start, and on the first run, it will create the database file (``snakemon.db`` by default) and the necessary tables.
 
+Docker Deployment
+****************
+
+Snakemon can also be run using Docker containers, which simplifies deployment and ensures consistent execution environments.
+
+**Using Docker Compose:**
+
+1. **Start the Containers:**
+
+   .. code-block:: bash
+
+       docker-compose up -d
+
+   This command starts both backend and frontend containers in detached mode.
+
+2. **Access the Applications:**
+
+   * **Backend API:** http://localhost:8000
+   * **Frontend UI:** http://localhost:5173
+
+3. **Environment Configuration:**
+
+   Environment variables can be configured in the ``docker-compose.yml`` file:
+
+   .. code-block:: yaml
+
+       backend:
+         environment:
+           DATABASE_URL: sqlite:///./snakemon.db
+           # Add other necessary env vars here
+
+       frontend:
+         environment:
+           VITE_API_BASE_URL: http://localhost:8000
+
+4. **Viewing Logs:**
+
+   .. code-block:: bash
+
+       # View logs from both services
+       docker-compose logs
+
+       # View logs from a specific service
+       docker-compose logs backend
+       docker-compose logs frontend
+
+       # Follow logs in real-time
+       docker-compose logs -f
+
+5. **Stopping the Services:**
+
+   .. code-block:: bash
+
+       # Stop the services but keep the containers
+       docker-compose stop
+       
+       # Stop and remove the containers
+       docker-compose down
+
+**Building Individual Containers:**
+
+Alternatively, you can build and run the containers separately:
+
+1. **Backend:**
+
+   .. code-block:: bash
+
+       # Build the image
+       docker build -t snakemon-backend .
+       
+       # Run the container
+       docker run -p 8000:8000 -e DATABASE_URL=sqlite:///./snakemon.db snakemon-backend
+
+2. **Frontend:**
+
+   .. code-block:: bash
+
+       # Build the image
+       cd frontend
+       docker build -t snakemon-frontend .
+       
+       # Run the container
+       docker run -p 5173:80 -e VITE_API_BASE_URL=http://localhost:8000 snakemon-frontend
+
 Snakemake Integration
 *********************
 

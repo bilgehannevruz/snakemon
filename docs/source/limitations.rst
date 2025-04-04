@@ -30,3 +30,10 @@ It is crucial to understand the limitations of the current Snakemon implementati
 
     *   The service only implements the three essential API endpoints required by the older ``--wms-monitor`` protocol (``/api/service-info``, ``/create_workflow``, ``/update_workflow_status``).
     *   It does not offer any additional endpoints for querying workflow status or logs via HTTP; database access is required for inspection. 
+
+5.  **Docker Deployment:**
+
+    *   **Database Persistence:** When using the SQLite database with Docker, ensure that the database file is properly persisted through a volume mount in the docker-compose.yml file. Otherwise, database data will be lost when containers are rebuilt.
+    *   **Network Configuration:** In the Docker setup, Snakemake running on the host machine must be configured to reach the Snakemon container's exposed port. Use ``http://localhost:8000`` when running Snakemake on the same host as Docker.
+    *   **Frontend Environment Variables:** The frontend container expects ``VITE_API_BASE_URL`` to be set correctly for communication with the backend. This should match the externally accessible URL of the backend service.
+    *   **Container Resource Limitations:** The containers are configured with default resource allocations. For high-throughput or production deployments, consider adjusting container resource limits in the docker-compose.yml file. 
