@@ -15,7 +15,7 @@ version = '0.1.0' # The full version, including alpha/beta/rc tags
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-from sphinxawesome_theme.html_translator import Icons
+from sphinxawesome_theme.postprocess import Icons
 
 extensions = [
     'sphinxawesome_theme', # Add the theme
@@ -36,6 +36,11 @@ root_doc = 'index'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinxawesome_theme'
+html_theme_options = {
+    "awesome_external_links": True,
+    "awesome_headerlinks": True,
+    "show_prev_next": False,
+}
 html_permalinks_icon = Icons.permalinks_icon
 html_static_path = ['_static']
 
