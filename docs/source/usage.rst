@@ -9,7 +9,7 @@ Installation
 
     .. code-block:: bash
 
-        git clone <your-repository-url>
+        git clone https://github.com/bilgehannevruz/snakemon
         cd snakemon
 
 2.  **Install Dependencies:** Snakemon uses ``uv`` for package management.

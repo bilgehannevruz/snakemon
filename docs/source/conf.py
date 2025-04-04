@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Snakemon'
-copyright = '2025, Your Name' # Update with current year and your name/org
-author = 'Your Name' # Update with your name/org
+copyright = '2025, Bilgehan' # Update with current year and your name/org
+author = 'Bilgehan' # Update with your name/org
 release = '0.1.0' # The short X.Y version
 version = '0.1.0' # The full version, including alpha/beta/rc tags
 

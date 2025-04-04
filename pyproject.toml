@@ -1,7 +1,7 @@
 [project]
 name = "snakemon"
 version = "0.1.0"
-description = "Add your description here"
+description = "Snakemake Monitoring tool as an alternative to panoptes"
 readme = "README.md"
 requires-python = ">=3.12"
 [dependency-groups]
