@@ -1,0 +1,19 @@
+[project]
+name = "snakemon"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+[dependency-groups]
+dev = [
+    "sphinx>=7.0",
+    "sphinx-rtd-theme>=3.0.2",
+]
+prod = [
+    "fastapi[standard]>=0.115.12",
+    "psycopg2-binary>=2.9.10",
+    "pydantic>=2.11.2",
+    "pydantic-settings>=2.8.1",
+    "python-dotenv>=1.1.0",
+    "sqlalchemy>=2.0.40",
+]
